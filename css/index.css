@@ -1,0 +1,148 @@
+@import url("//fonts.googleapis.com/earlyaccess/notosanskr.css");
+
+/* variables */
+:root {
+  font-size: 10px;
+  --mainColor-300: #eae8fe;
+  --mainColor: #6327fe;
+  --white: #ffffff;
+  --font-xl: 1.4rem;
+  --font-l: 1.3rem;
+  --font-m: 1.2rem;
+  --font-sm: 0.9rem;
+}
+
+/* reset */
+body {
+  margin: 0 auto;
+}
+
+h1,
+ul,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* common */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+* {
+  font-family: "Noto Sans KR";
+}
+
+body {
+  background-color: var(--mainColor-300);
+  height: 100vh;
+}
+
+header {
+  margin-bottom: 67px;
+}
+
+header img {
+  width: 386px;
+  display: block;
+  margin: 0 auto;
+}
+
+.wrapper {
+  box-shadow: inset 0 0 10px violet;
+  display: flex;
+  justify-content: center;
+  /* 변동값 28 20 */
+  gap: 28px;
+}
+
+/* vending-machine */
+.vending-machine,
+.vending-machine-order {
+  background-color: var(--white);
+  /* 변동값 360 306 */
+  width: 360px;
+}
+
+.vending-machine {
+  box-shadow: inset 0 0 10px blue;
+  padding: 31px 27px 28px 27px;
+  box-sizing: border-box;
+}
+
+/* machine-item */
+.machine-item-wrapper {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  justify-items: center;
+  gap: 12px;
+}
+
+.machine-item {
+  width: 94px;
+  height: 130px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.machine-item:focus {
+  box-shadow: 0 0 0 3px var(--mainColor);
+}
+
+.machine-item.selected {
+  box-shadow: 0 0 0 3px var(--mainColor);
+}
+
+.item-img {
+  margin-bottom: 6px;
+}
+
+.item-name {
+  font-size: var(--font-sm);
+  line-height: 1.3em;
+  margin-bottom: 7px;
+}
+
+.item-price {
+  width: 70px;
+  height: 22px;
+
+  font-size: var(--font-m);
+  color: var(--white);
+  background-color: var(--mainColor);
+  border-radius: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-price-value {
+  line-height: var(--font-m);
+}
+
+/* vending-machine-order */
+.vending-machine-order {
+  box-shadow: inset 0 0 10px green;
+}
