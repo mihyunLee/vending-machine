@@ -6,6 +6,7 @@
   --mainColor-300: #eae8fe;
   --mainColor: #6327fe;
   --white: #ffffff;
+  --gray: #bdbdbd;
   --font-xl: 1.4rem;
   --font-l: 1.3rem;
   --font-m: 1.2rem;
@@ -32,6 +33,10 @@ img {
   vertical-align: top;
 }
 
+input {
+  padding: 0;
+}
+
 /* common */
 .a11y-hidden {
   clip: rect(1px, 1px, 1px, 1px);
@@ -46,6 +51,8 @@ img {
 
 * {
   font-family: "Noto Sans KR";
+  font-weight: 500;
+  box-sizing: border-box;
 }
 
 body {
@@ -64,7 +71,6 @@ header img {
 }
 
 .wrapper {
-  box-shadow: inset 0 0 10px violet;
   display: flex;
   justify-content: center;
   /* 변동값 28 20 */
@@ -80,9 +86,7 @@ header img {
 }
 
 .vending-machine {
-  box-shadow: inset 0 0 10px blue;
   padding: 31px 27px 28px 27px;
-  box-sizing: border-box;
 }
 
 /* machine-item */
@@ -109,7 +113,6 @@ header img {
 
   position: relative;
   padding: 11px 10px 9px 11px;
-  box-sizing: border-box;
 }
 
 .machine-item:not(.sold-out) {
@@ -152,7 +155,6 @@ header img {
 
 .item-name {
   font-size: var(--font-sm);
-  line-height: 1.3em;
   margin-bottom: 7px;
   word-break: break-word;
 }
@@ -171,8 +173,120 @@ header img {
   align-items: center;
 }
 
-.item-price-value {
-  line-height: var(--font-m);
+/* machine-bottom */
+.machine-bottom {
+  margin-top: 20px;
+}
+
+/* content-wrapper */
+.content-wrapper {
+  display: grid;
+  grid-template: 1fr 1fr 3fr / 2fr 1fr;
+  gap: 11px 12px;
+}
+
+/* view-box */
+[class^="view-box"] {
+  background-color: var(--mainColor-300);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 6px 10px;
+
+  font-size: var(--font-xl);
+}
+
+/* button */
+[class^="btn"] {
+  border: none;
+  border-radius: 5px;
+  font-size: var(--font-l);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+[class$="default"] {
+  background-color: var(--white);
+}
+
+[class$="submit"] {
+  background-color: var(--mainColor);
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* input */
+.input-style {
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  color: var(--gray);
+  padding-left: 6px;
+}
+
+/* selected-list */
+.selected-list {
+  height: 106px;
+  background-color: var(--mainColor-300);
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  padding: 12px 6px 12px 12px;
+
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.selected-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.selected-list::-webkit-scrollbar-thumb {
+  background: var(--white);
+  border-radius: 50px;
+  border: 4px solid var(--mainColor-300);
+}
+
+/* selected-item */
+.selected-item {
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 6px 8px 7px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  word-wrap: break-all;
+}
+
+.selected-item:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.selected-item-name {
+  font-size: var(--font-sm);
+}
+
+.selected-item-img {
+  width: 18px;
+  aspect-ratio: 18 / 33;
+  vertical-align: middle;
+
+  margin-right: 10px;
+}
+
+.selected-count {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  font-size: var(--font-xl);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* vending-machine-order */
