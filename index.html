@@ -14,8 +14,8 @@
     </header>
     <main>
       <div class="wrapper">
-        <section class="vending-machine">
-          <form action="#">
+        <section class="vending-machine-wrapper">
+          <form class="vending-machine" action="#">
             <div class="machine-top">
               <ul class="machine-item-wrapper">
                 <li>
@@ -25,8 +25,12 @@
                       src="images/originalcola.png"
                       alt="오리지널 콜라 이미지"
                     />
-                    <span class="item-name">Original_Cola</span>
+                    <div class="item-name">
+                      <span class="a11y-hidden">상품명</span>
+                      <span>Original_Cola</span>
+                    </div>
                     <div class="item-price">
+                      <span class="a11y-hidden">상품 금액</span>
                       <span class="item-price-value">1000원</span>
                     </div>
                   </button>
@@ -41,8 +45,12 @@
                       src="images/violetcola.png"
                       alt="보라색 콜라 이미지"
                     />
-                    <span class="item-name">Violet_Cola</span>
+                    <div class="item-name">
+                      <span class="a11y-hidden">상품명</span>
+                      <span class="item-name">Violet_Cola</span>
+                    </div>
                     <div class="item-price">
+                      <span class="a11y-hidden">상품 금액</span>
                       <span class="item-price-value">1000원</span>
                     </div>
                   </button>
@@ -54,8 +62,12 @@
                       src="images/yellowcola.png"
                       alt="노란색 콜라 이미지"
                     />
-                    <span class="item-name">Yellow_Cola</span>
+                    <div class="item-name">
+                      <span class="a11y-hidden">상품명</span>
+                      <span class="item-name">Yellow_Cola</span>
+                    </div>
                     <div class="item-price">
+                      <span class="a11y-hidden">상품 금액</span>
                       <span class="item-price-value">1000원</span>
                     </div>
                   </button>
@@ -67,8 +79,12 @@
                       src="images/coolcola.png"
                       alt="파란색 콜라 이미지"
                     />
-                    <span class="item-name">Cool_Cola</span>
+                    <div class="item-name">
+                      <span class="a11y-hidden">상품명</span>
+                      <span class="item-name">Cool_Cola</span>
+                    </div>
                     <div class="item-price">
+                      <span class="a11y-hidden">상품 금액</span>
                       <span class="item-price-value">1000원</span>
                     </div>
                   </button>
@@ -80,8 +96,12 @@
                       src="images/greencola.png"
                       alt="초록색 콜라 이미지"
                     />
-                    <span class="item-name">Green_Cola</span>
+                    <div class="item-name">
+                      <span class="a11y-hidden">상품명</span>
+                      <span class="item-name">Green_Cola</span>
+                    </div>
                     <div class="item-price">
+                      <span class="a11y-hidden">상품 금액</span>
                       <span class="item-price-value">1000원</span>
                     </div>
                   </button>
@@ -93,8 +113,12 @@
                       src="images/orangecola.png"
                       alt="주황색 콜라 이미지"
                     />
-                    <span class="item-name">Orange_Cola</span>
+                    <div class="item-name">
+                      <span class="a11y-hidden">상품명</span>
+                      <span class="item-name">Orange_Cola</span>
+                    </div>
                     <div class="item-price">
+                      <span class="a11y-hidden">상품 금액</span>
                       <span class="item-price-value">1000원</span>
                     </div>
                   </button>
@@ -104,8 +128,8 @@
             <div class="machine-bottom">
               <div class="content-wrapper">
                 <div class="view-box-balance">
-                  <p>잔액</p>
-                  <p>1,000원</p>
+                  <span class="money-title">잔액</span>
+                  <em>1,000 원</em>
                 </div>
                 <button class="btn-default" type="button">거스름돈 반환</button>
                 <label class="a11y-hidden" for="input-deposit">
@@ -127,9 +151,13 @@
                           src="images/originalcola.png"
                           alt="오리지널 콜라 이미지"
                         />
-                        <span class="selected-item-name">Original_Cola</span>
+                        <div class="selected-item-name">
+                          <span class="a11y-hidden">상품명</span>
+                          <span>Original_Cola</span>
+                        </div>
                       </div>
                       <div class="selected-count">
+                        <span class="a11y-hidden">선택한 갯수</span>
                         <span class="selected-count-value">1</span>
                       </div>
                     </li>
@@ -140,9 +168,13 @@
                           src="images/greencola.png"
                           alt="초록색 콜라 이미지"
                         />
-                        <span class="selected-item-name">Green_Cola</span>
+                        <div class="selected-item-name">
+                          <span class="a11y-hidden">상품명</span>
+                          <span>Green_Cola</span>
+                        </div>
                       </div>
                       <div class="selected-count">
+                        <span class="a11y-hidden">선택한 갯수</span>
                         <span class="selected-count-value">2</span>
                       </div>
                     </li>
@@ -153,7 +185,97 @@
             </div>
           </form>
         </section>
-        <section class="vending-machine-order">...</section>
+        <section class="vending-machine-order">
+          <div class="vending-machine-wrapper">
+            <div class="money-wrapper">
+              <div class="view-box-money">
+                <span class="money-title">소지금</span>
+                <em>25,000 원</em>
+              </div>
+            </div>
+          </div>
+          <div class="vending-machine-wrapper total">
+            <div class="total-box">
+              <h2 class="total-box-title">획득한 음료</h2>
+              <div class="selected-list">
+                <ul>
+                  <li class="selected-item">
+                    <div class="selected-item-info">
+                      <img
+                        class="selected-item-img"
+                        src="images/originalcola.png"
+                        alt="오리지널 콜라 이미지"
+                      />
+                      <div class="selected-item-name">
+                        <span class="a11y-hidden">상품명</span>
+                        <span>Original_Cola</span>
+                      </div>
+                    </div>
+                    <div class="selected-count">
+                      <span class="a11y-hidden">선택한 갯수</span>
+                      <span class="selected-count-value">1</span>
+                    </div>
+                  </li>
+                  <li class="selected-item">
+                    <div class="selected-item-info">
+                      <img
+                        class="selected-item-img"
+                        src="images/greencola.png"
+                        alt="초록색 콜라 이미지"
+                      />
+                      <div class="selected-item-name">
+                        <span class="a11y-hidden">상품명</span>
+                        <span>Green_Cola</span>
+                      </div>
+                    </div>
+                    <div class="selected-count">
+                      <span class="a11y-hidden">선택한 갯수</span>
+                      <span class="selected-count-value">2</span>
+                    </div>
+                  </li>
+                  <li class="selected-item">
+                    <div class="selected-item-info">
+                      <img
+                        class="selected-item-img"
+                        src="images/orangecola.png"
+                        alt="주황색 콜라 이미지"
+                      />
+                      <div class="selected-item-name">
+                        <span class="a11y-hidden">상품명</span>
+                        <span>Orange_Cola</span>
+                      </div>
+                    </div>
+                    <div class="selected-count">
+                      <span class="a11y-hidden">선택한 갯수</span>
+                      <span class="selected-count-value">1</span>
+                    </div>
+                  </li>
+                  <li class="selected-item">
+                    <div class="selected-item-info">
+                      <img
+                        class="selected-item-img"
+                        src="images/violetcola.png"
+                        alt="보라색 콜라 이미지"
+                      />
+                      <div class="selected-item-name">
+                        <span class="a11y-hidden">상품명</span>
+                        <span>Violet_Cola</span>
+                      </div>
+                    </div>
+                    <div class="selected-count">
+                      <span class="a11y-hidden">선택한 갯수</span>
+                      <span class="selected-count-value">5</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="total-price">
+                <span class="money-title">총금액</span>
+                <em>9,000 원</em>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   </body>

@@ -19,6 +19,7 @@ body {
 }
 
 h1,
+h2,
 ul,
 p {
   margin: 0;
@@ -35,6 +36,10 @@ img {
 
 input {
   padding: 0;
+}
+
+em {
+  font-style: initial;
 }
 
 /* common */
@@ -77,9 +82,8 @@ header img {
   gap: 28px;
 }
 
-/* vending-machine */
-.vending-machine,
-.vending-machine-order {
+/* vending-machine-wrapper */
+.vending-machine-wrapper {
   background-color: var(--white);
   /* 변동값 360 306 */
   width: 360px;
@@ -183,6 +187,7 @@ header img {
   display: grid;
   grid-template: 1fr 1fr 3fr / 2fr 1fr;
   gap: 11px 12px;
+  height: 194px;
 }
 
 /* view-box */
@@ -222,13 +227,15 @@ header img {
 .input-style {
   border: 1px solid var(--gray);
   border-radius: 5px;
-  color: var(--gray);
   padding-left: 6px;
+}
+
+.input-style::placeholder {
+  color: var(--gray);
 }
 
 /* selected-list */
 .selected-list {
-  height: 106px;
   background-color: var(--mainColor-300);
   border: 1px solid var(--gray);
   border-radius: 5px;
@@ -257,8 +264,6 @@ header img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  word-wrap: break-all;
 }
 
 .selected-item:not(:last-child) {
@@ -266,6 +271,7 @@ header img {
 }
 
 .selected-item-name {
+  display: inline-block;
   font-size: var(--font-sm);
 }
 
@@ -289,7 +295,49 @@ header img {
   align-items: center;
 }
 
-/* vending-machine-order */
+/* -- vending-machine-order -- */
 .vending-machine-order {
-  box-shadow: inset 0 0 10px green;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.money-wrapper {
+  padding: 9px 27px;
+}
+
+.vending-machine-wrapper.total {
+  flex-grow: 1;
+}
+
+/* view-box-money */
+.view-box-money em {
+  font-weight: 700;
+}
+
+/* total-box */
+.total-box {
+  padding: 25px 27px;
+  height: 100%;
+  text-align: center;
+}
+
+.total-box .selected-list {
+  height: 364px;
+}
+
+.total-box-title {
+  margin-bottom: 13px;
+  font-size: var(--font-xl);
+  font-weight: 700;
+}
+
+.total-price {
+  margin-top: 6px;
+  float: right;
+  font-size: var(--font-m);
+}
+
+.money-title::after {
+  content: " :";
 }
