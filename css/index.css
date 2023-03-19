@@ -78,7 +78,6 @@ header img {
 .wrapper {
   display: flex;
   justify-content: center;
-  /* 변동값 28 20 */
   gap: 28px;
 }
 
@@ -340,4 +339,38 @@ header img {
 
 .money-title::after {
   content: " :";
+}
+
+@media (max-width: 780px) {
+  body {
+    background-color: var(--white);
+  }
+
+  header {
+    margin-bottom: 18px;
+  }
+
+  header img {
+    max-width: 166px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .vending-machine {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  .money-wrapper {
+    padding-top: 0;
+  }
+
+  .vending-machine-wrapper.total {
+    margin-top: 10px;
+    margin-bottom: 43px;
+  }
 }
